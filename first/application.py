@@ -9,3 +9,6 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return "Hello, world!"
+
+
+# to run this with a different name (other than app.py), run "export FLASK_APP=application" followed by "flask run"
