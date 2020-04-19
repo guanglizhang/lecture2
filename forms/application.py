@@ -8,5 +8,7 @@ def index():
 
 @app.route("/hello", methods=["POST"])
 def hello():
-    name = request.form.get("name")
+    name = request.form.get("name") # take the request the user made, access the form,
+                                    # and store the field called `name` in a Python variable also called `name`
     return render_template("hello.html", name=name)
+
