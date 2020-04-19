@@ -16,11 +16,14 @@ notes = []
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    if session.get("notes") is None:
+        session["notes"] = []
     if request.method == "POST":
         note = request.form.get("note")
-        notes.append(note)
+        session["notes"].append(note)
 
-    return render_template("index.html", notes=notes)
+    return render_template("index.html", notes=session["notes"])
+
 
 # notes is the list where the notes will be stored. 
 # If the user doesn’t have a notes list already (checked with if session.get("notes") is None), then they are given an empty one.
