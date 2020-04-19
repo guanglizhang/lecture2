@@ -1,3 +1,6 @@
+# Sessions are how Flask can keep track of data that pertains to a particular user. Let’s take a note-taking app, for example. Users should only be able to see their own notes.
+# To use sessions, they must be imported and set up:
+
 from flask import Flask, render_template, request, session # gives access to a variable called `session`
                                                            # which can be used to keep vaules that are specific to a particular user
 from flask_session import Session # an additional extension to sessions which allows them
